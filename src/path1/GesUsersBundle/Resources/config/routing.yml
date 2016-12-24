@@ -1,0 +1,19 @@
+path1_ges_users_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: path1GesUsersBundle:Default:index }
+
+_add_user:
+    path:     /AddUser
+    defaults: { _controller: path1GesUsersBundle:ManageUsers:AddUser }
+
+_update_user:
+    path:     /UpdateUser/{id}
+    defaults: { _controller: path1GesUsersBundle:ManageUsers:UpdateUser }
+
+_delete_user:
+    path:     /DeleteUser/{id}
+    defaults: { _controller: path1GesUsersBundle:ManageUsers:DeleteUser }
+
+_list_user:
+    path:     /ListUsers
+    defaults: { _controller: path1GesUsersBundle:ManageUsers:ListUser }

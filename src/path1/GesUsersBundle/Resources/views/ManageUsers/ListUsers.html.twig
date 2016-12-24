@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}GesUsersBundle:ManageUsrsController:ListUsers{% endblock %}
+
+{% block body %}
+<h1>Welcome to List Users page</h1>
+<table border="1" align="center">
+<tr><th>ID</th><th>Name</th><th>Nationality</th><th>Age</th><th>Gender</th></tr>
+
+{% for u in user %}
+<tr>
+<td>{{u.id}}</td>
+<td>{{u.name}}</td>
+<td>{{u.Nationality}}</td>
+<td>{{u.Age}}</td>
+<td>{{u.gender}}</td>
+<td><a href="{{path("_update_user",{'id':u.id})}}">Modifier</a></td>
+<td><a href="{{path("_delete_user",{'id':u.id})}}">Supprimer</a></td>
+</tr>
+{% endfor %}
+</table>
+<table align="center">
+<form action="{{path("_add_user")}}" method='post'>
+<input type='submit' value='Ajouter User'/>
+</form>
+</table>
+{% endblock %}
